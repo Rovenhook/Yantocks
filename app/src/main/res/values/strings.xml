@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Yantocks</string>
+    <string name="textview_default_text">TextView</string>
+    <string name="imageview_favourite_sign">Favourite sign</string>
+    <string name="textview_details_short_name">Symbol: %s</string>
+    <string name="textview_details_full_name">Company: %s</string>
+    <string name="textview_details_country">Country: %s</string>
+    <string name="textview_details_sector">Sector: %s</string>
+    <string name="textview_details_currency">Currency: %s</string>
+    <string name="imageview_details_return_description">Return button for Details screen</string>
+    <string name="imageview_details_favourite_description">Add to favourites button for Details screen</string>
+    <string name="textview_details_id">ID: %d</string>
+    <string name="textview_details_close">Close value: %.2f</string>
+    <string name="textview_details_high">Highest value: %.2f</string>
+    <string name="textview_details_low">Lowest value: %.2f</string>
+    <string name="textview_details_change_flat">Flat change: %s</string>
+    <string name="textview_details_change_percent">Change percentage: %s</string>
+    <string name="textview_details_time_update">Updated: %s</string>
+    <string name="textview_hint_search">Type symbol or company</string>
+    <string name="imageview_cancel_typing_cross">Image for cancel typing button</string>
+    <string name="imageview_magnifying_glass_description">Magnifying glass for search button</string>
+    <string name="textview_label_all_stocks">Stocks</string>
+    <string name="textview_label_favourite">Favourite</string>
+</resources>

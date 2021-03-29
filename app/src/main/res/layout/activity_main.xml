@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editTextTextSearch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/textview_hint_search"
+        android:inputType="textPersonName"
+        android:textColorHighlight="@color/black"
+        android:textColorLink="@color/black"
+        android:textCursorDrawable="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewMagnifyingGlass"
+        app:layout_constraintStart_toEndOf="@+id/imageViewCancelCross"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewAllStocks"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:onClick="onClickChangeStocksAndFavourite"
+        android:text="@string/textview_label_all_stocks"
+        android:textSize="@dimen/textview_focused_label_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textViewFavoriteStocks"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextSearch" />
+
+    <TextView
+        android:id="@+id/textViewFavoriteStocks"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:onClick="onClickChangeStocksAndFavourite"
+        android:text="@string/textview_label_favourite"
+        android:textSize="@dimen/textview_unfocused_label_size"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewAllStocks"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextSearch" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewStocks"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextSearch" />
+
+    <ImageView
+        android:id="@+id/imageViewCancelCross"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:contentDescription="@string/imageview_cancel_typing_cross"
+        android:onClick="onclickCancelSearch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cross" />
+
+    <ImageView
+        android:id="@+id/imageViewMagnifyingGlass"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:onClick="onClickSearch"
+        android:contentDescription="@string/imageview_magnifying_glass_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/magnifying_glass" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailsActivity">
+
+    <TextView
+        android:id="@+id/textViewDetailsShortName"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/textview_details_margin"
+        android:paddingStart="@dimen/textview_details_padding_start"
+        android:textSize="@dimen/textview_details_text_size"
+        android:textStyle="bold"
+        android:text="@string/textview_details_short_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetailsID" />
+
+    <TextView
+        android:id="@+id/textViewDetailsLongName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/textview_details_margin"
+        android:paddingStart="@dimen/textview_details_padding_start"
+        android:textSize="@dimen/textview_details_text_size"
+        android:textStyle="bold"
+        android:text="@string/textview_details_full_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetailsShortName" />
+
+    <TextView
+        android:id="@+id/textViewDetailsCountry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/textview_details_margin"
+        android:paddingStart="@dimen/textview_details_padding_start"
+        android:textSize="@dimen/textview_details_text_size"
+        android:textStyle="bold"
+        android:text="@string/textview_details_country"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetailsLongName" />
+
+    <TextView
+        android:id="@+id/textViewDetailsSector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/textview_details_margin"
+        android:paddingStart="@dimen/textview_details_padding_start"
+        android:textSize="@dimen/textview_details_text_size"
+        android:textStyle="bold"
+        android:text="@string/textview_details_sector"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetailsCountry" />
+
+    <TextView
+        android:id="@+id/textViewDetailsCurrency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/textview_details_margin"
+        android:paddingStart="@dimen/textview_details_padding_start"
+        android:textSize="@dimen/textview_details_text_size"
+        android:textStyle="bold"
+        android:text="@string/textview_details_currency"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetailsSector" />
+
+    <ImageView
+        android:id="@+id/imageViewReturn"
+        android:layout_width="20dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/imageview_details_return_description"
+        android:onClick="onClickDetailsReturn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back_arrow" />
+
+    <ImageView
+        android:id="@+id/imageViewDetailsFavourite"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="24dp"
+        android:contentDescription="@string/imageview_details_favourite_description"
+        android:onClick="onClickDetailsFavourite"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewReturn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/empty_star" />
+
+    <TextView
+        android:id="@+id/textViewDetailsID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/textview_details_margin"
+        android:paddingStart="@dimen/textview_details_padding_start"
+        android:textSize="@dimen/textview_details_text_size"
+        android:textStyle="bold"
+        android:text="@string/textview_details_id"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <TextView
+        android:id="@+id/textViewDetailsClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/textview_details_margin"
+        android:paddingStart="@dimen/textview_details_padding_start"
+        android:textSize="@dimen/textview_details_text_size"
+        android:textStyle="bold"
+        android:text="@string/textview_details_close"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetailsCurrency" />
+
+    <TextView
+        android:id="@+id/textViewDetailsHigh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/textview_details_margin"
+        android:paddingStart="@dimen/textview_details_padding_start"
+        android:textSize="@dimen/textview_details_text_size"
+        android:textStyle="bold"
+        android:text="@string/textview_details_high"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetailsClose" />
+
+    <TextView
+        android:id="@+id/textViewDetailsLow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/textview_details_margin"
+        android:paddingStart="@dimen/textview_details_padding_start"
+        android:textSize="@dimen/textview_details_text_size"
+        android:textStyle="bold"
+        android:text="@string/textview_details_low"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetailsHigh" />
+
+    <TextView
+        android:id="@+id/textViewDetailsChangeFlat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/textview_details_margin"
+        android:paddingStart="@dimen/textview_details_padding_start"
+        android:textSize="@dimen/textview_details_text_size"
+        android:textStyle="bold"
+        android:text="@string/textview_details_change_flat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetailsLow" />
+
+    <TextView
+        android:id="@+id/textViewDetailsChangePercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/textview_details_margin"
+        android:paddingStart="@dimen/textview_details_padding_start"
+        android:textSize="@dimen/textview_details_text_size"
+        android:textStyle="bold"
+        android:text="@string/textview_details_change_percent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetailsChangeFlat" />
+
+    <TextView
+        android:id="@+id/textViewDetailsTimeUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/textview_details_margin"
+        android:paddingStart="@dimen/textview_details_padding_start"
+        android:textSize="@dimen/textview_details_text_size"
+        android:textStyle="bold"
+        android:text="@string/textview_details_time_update"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetailsChangePercent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
