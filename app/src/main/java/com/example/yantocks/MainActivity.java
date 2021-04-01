@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
 //    private StocksDBHelper stocksDBHelper;
 //    private SQLiteDatabase sqLiteDatabase;
     private StocksAdapter stocksAdapter;
+    private StocksAdapter stocksFavouriteAdapter;
+    private StocksAdapter stocksSearchAdapter;
     private TextView textViewAllStocks;
     private TextView textViewFavoriteStocks;
 
@@ -71,9 +73,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void onclickCancelSearch(View view) {
         editTextSearch.setText("");
+        editTextSearch.clearFocus();
+        if (favourite) {
+            recyclerViewStocks.setAdapter(stocksFavouriteAdapter);
+        } else {
+            recyclerViewStocks.setAdapter(stocksAdapter);
+        }
     }
 
     public void onClickChangeStocksAndFavourite(View view) {
+        editTextSearch.setText("");
         if (view.equals(textViewAllStocks)) {
             textViewAllStocks.setTypeface(Typeface.DEFAULT_BOLD);
             textViewAllStocks.setTextSize(24);
@@ -81,19 +90,55 @@ public class MainActivity extends AppCompatActivity {
             textViewFavoriteStocks.setTypeface(Typeface.DEFAULT);
             textViewFavoriteStocks.setTextSize(20);
 
+            recyclerViewStocks.setAdapter(stocksAdapter);
+            favourite = false;
+
         } else if (view == textViewFavoriteStocks) {
             textViewFavoriteStocks.setTypeface(Typeface.DEFAULT_BOLD);
             textViewFavoriteStocks.setTextSize(24);//(R.dimen.textview_focused_label_size);
 
             textViewAllStocks.setTypeface(Typeface.DEFAULT);
             textViewAllStocks.setTextSize(20);
+
+            setFavouriteAdapterList();
+            favourite = true;
         }
+    }
+
+    private void setFavouriteAdapterList() {
+        favouriteStocks = new ArrayList<>();
+
+        for (Stock s : stocks) {
+            if (s.getFavourite() > 0) {
+                favouriteStocks.add(s);
+            }
+        }
+        stocksFavouriteAdapter = new StocksAdapter(favouriteStocks);
+        recyclerViewStocks.setAdapter(stocksFavouriteAdapter);
     }
 
     public void onClickSearch(View view) {
         String str = editTextSearch.getText().toString();
         if (!str.isEmpty()) {
-            
+            ArrayList<Stock> foundStocks = new ArrayList<>();
+            str = str.toLowerCase();
+            if (favourite) {
+                Log.i("tryout", "About to know favouriteStocks size");
+                Log.i("tryout", "favouriteStocks size = " + favouriteStocks.size() + "");
+                for (Stock s : favouriteStocks) {
+                    if (s.getFullName().toLowerCase().contains(str) || s.getShortName().toLowerCase().contains(str)) {
+                        foundStocks.add(s);
+                    }
+                }
+            } else {
+                for (Stock s : stocks) {
+                    if (s.getFullName().toLowerCase().contains(str) || s.getShortName().toLowerCase().contains(str)) {
+                        foundStocks.add(s);
+                    }
+                }
+            }
+            stocksSearchAdapter = new StocksAdapter(foundStocks);
+            recyclerViewStocks.setAdapter(stocksSearchAdapter);
         }
     }
 
